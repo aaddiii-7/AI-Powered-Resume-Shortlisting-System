@@ -40,15 +40,18 @@ export default function FinisherBackground({
 
     if (window.FinisherHeader) {
       init();
-    } else {
-      const script = document.querySelector(
-        'script[src="/finisher-header.es5.min.js"]',
-      );
-      if (script) {
-        script.addEventListener("load", init);
-        return () => script.removeEventListener("load", init);
-      }
+      return;
     }
+
+    // Script may not be loaded yet — poll briefly then fall back to load event
+    const interval = setInterval(() => {
+      if (window.FinisherHeader) {
+        clearInterval(interval);
+        init();
+      }
+    }, 50);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (

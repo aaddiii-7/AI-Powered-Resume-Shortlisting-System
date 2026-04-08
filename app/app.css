@@ -156,15 +156,6 @@ form {
   overflow: hidden;
 }
 
-.finisher-header canvas {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  z-index: 0;
-}
-
 .finisher-header > *:not(canvas) {
   position: relative;
   z-index: 1;
