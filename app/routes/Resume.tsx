@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import Summay from "~/components/Summay";
-import ATS from "~/components/Ats";
+import ATS from "~/components/ATS";
 import Details from "~/components/Details";
 import { usePuterStore } from "~/lib/puter";
 

@@ -45,6 +45,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <ScrollRestoration />
         <Scripts />
       </body>
+      <script src="/finisher-header.es5.min.js"></script>
       <script src="https://js.puter.com/v2/"></script>
     </html>
   );
