@@ -52,7 +52,21 @@ const WipeApp = () => {
             </div>
             <div>
                 <button
-                    className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer"
+                    className="text-white px-4 py-2 rounded-md cursor-pointer"
+                    style={{
+                      background: 'rgba(142, 152, 255, 0.6)',
+                      backdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.background = 'rgba(142, 152, 255, 0.8)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.background = 'rgba(142, 152, 255, 0.6)';
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                    }}
                     onClick={() => handleDelete()}
                 >
                     Wipe App Data

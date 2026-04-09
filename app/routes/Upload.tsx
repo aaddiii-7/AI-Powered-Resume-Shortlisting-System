@@ -98,7 +98,7 @@ const Upload = () => {
   };
 
   return (
-    <main className="bg-[url('/images/bg-main.svg')] bg-cover">
+    <main className="bg-transparent">
       <Navbar />
       <section className="main-section">
         <div className="page-heading gap-0">

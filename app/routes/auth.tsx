@@ -17,9 +17,15 @@ const auth = () => {
     if (auth.isAuthenticated) navigate(next);
   }, [auth.isAuthenticated, next]);
   return (
-    <main className="bg-[url('/images/bg-auth.svg')] bg-cover min-h-screen flex items-center justify-center">
-      <div className="gradient-border shadow-lg">
-        <section className="flex flex-col gap-8 bg-white rounded-2xl p-10">
+    <main className="min-h-screen flex items-center justify-center">
+      <div style={{
+        background: 'rgba(255, 255, 255, 0.7)',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255, 255, 255, 0.3)',
+        borderRadius: '24px',
+        padding: '40px'
+      }}>
+        <section className="flex flex-col gap-8">
           <div className="flex flex-col gap-2 items-center text-center">
             <h1>Welcome</h1>
             <h2>Log In To Continue Your Job Journey</h2>

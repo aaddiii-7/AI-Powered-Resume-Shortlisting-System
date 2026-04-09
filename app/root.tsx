@@ -11,6 +11,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import { usePuterStore } from "./lib/puter";
 import { useEffect } from "react";
+import { useFinisherHeader } from "./hooks/useFinisherHeader";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -25,12 +26,15 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export default function App() {
   const { init } = usePuterStore();
 
   useEffect(() => {
     init();
   }, [init]);
+
+  // Initialize Finisher Header background
+  useFinisherHeader();
 
   return (
     <html lang="en">
@@ -41,17 +45,27 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <div
+          className="finisher-header"
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            zIndex: 0,
+            pointerEvents: 'none',
+          }}
+        />
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <Outlet />
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>
       <script src="https://js.puter.com/v2/"></script>
     </html>
   );
-}
-
-export default function App() {
-  return <Outlet />;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

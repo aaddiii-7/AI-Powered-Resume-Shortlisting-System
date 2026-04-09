@@ -66,7 +66,9 @@ const Resume = () => {
 
       <div className="flex flex-row w-full max-lg:flex-col-reverse">
         {/* LEFT SIDE */}
-        <section className="feedback-section bg-[url('/images/bg-small.svg')] bg-cover h-[100vh] sticky top-0 flex items-center justify-center">
+        <section className="feedback-section h-[100vh] sticky top-0 flex items-center justify-center" style={{
+          background: 'transparent'
+        }}>
           {imageUrl && resumeUrl && (
             <div className="animate-in fade-in duration-1000 gradient-border max-sm:m-0 h-[90%] max-w-xl:h-fit w-fit">
               <a href={resumeUrl} target="_blank" rel="noopener noreferrer">

@@ -20,7 +20,12 @@
 
 html,
 body {
-  @apply bg-white;
+  @apply bg-transparent;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 main {
@@ -38,11 +43,19 @@ label {
   @apply text-dark-200;
 }
 input {
-  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+  @apply w-full p-4 rounded-2xl focus:outline-none;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #000;
 }
 
 textarea {
-  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+  @apply w-full p-4 rounded-2xl focus:outline-none;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #000;
 }
 
 form {
@@ -54,25 +67,64 @@ form {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
   }
   .gradient-border {
-    @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
+    @apply p-4 rounded-2xl;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(200, 211, 248, 0.4);
   }
   .primary-button {
-    @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full;
+    @apply text-white rounded-full px-4 py-2 cursor-pointer w-full;
+    background: rgba(142, 152, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgba(142, 152, 255, 0.8);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
   }
   .resume-nav {
-    @apply flex flex-row justify-between items-center p-4 border-b border-gray-200;
+    @apply flex flex-row justify-between items-center p-4;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
   .resume-summary {
     @apply flex flex-row items-center justify-center p-4 gap-4;
     .category {
-      @apply flex flex-row gap-2 items-center bg-gray-50 rounded-2xl p-4 w-full justify-between;
+      @apply flex flex-row gap-2 items-center rounded-2xl p-4 w-full justify-between;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
   }
   .back-button {
-    @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm;
+    @apply flex flex-row items-center gap-2 rounded-lg p-2;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.7);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
   }
   .auth-button {
-    @apply primary-gradient rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white;
+    @apply rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white;
+    background: rgba(142, 152, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(96, 107, 235, 0.2);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgba(142, 152, 255, 0.8);
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 8px 32px rgba(96, 107, 235, 0.35);
+    }
   }
   .main-section {
     @apply flex flex-col items-center gap-8 pt-12 mx-15 pb-5;
@@ -85,7 +137,11 @@ form {
   }
 
   .resume-card {
-    @apply flex flex-col gap-8 h-[560px] w-full lg:w-[450px] xl:w-[490px] bg-white rounded-2xl p-4;
+    @apply flex flex-col gap-8 h-[560px] w-full lg:w-[450px] xl:w-[490px] rounded-2xl p-4;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
 
   .resume-card-header {
@@ -97,7 +153,11 @@ form {
   }
 
   .navbar {
-    @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
+    @apply flex flex-row justify-between items-center rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
 
   .score-badge {
@@ -109,15 +169,22 @@ form {
   }
 
   .uplader-drag-area {
-    @apply relative p-8 text-center transition-all duration-700 cursor-pointer bg-white rounded-2xl min-h-[208px];
+    @apply relative p-8 text-center transition-all duration-700 cursor-pointer rounded-2xl min-h-[208px];
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
   }
   .uploader-selected-file {
-    @apply flex items-center justify-between p-3 bg-gray-50 rounded-2xl;
+    @apply flex items-center justify-between p-3 rounded-2xl;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
-}
-
-@utility bg-gradient {
-  background: linear-gradient(to bottom, #f0f4ff 60%, #fa7185cc);
 }
 
 @utility text-gradient {
@@ -126,15 +193,6 @@ form {
 
 @utility gradient-hover {
   @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200;
-}
-
-@utility primary-gradient {
-  background: linear-gradient(to bottom, #8e98ff, #606beb);
-  box-shadow: 0px 74px 21px 0px #6678ef00;
-}
-
-@utility primary-gradient-hover {
-  background: linear-gradient(to bottom, #717dff, #4957eb);
 }
 
 @utility inset-shadow {
