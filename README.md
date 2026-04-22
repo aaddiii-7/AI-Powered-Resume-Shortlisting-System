@@ -87,15 +87,15 @@ The application allows users to upload resumes, analyze them using AI, and recei
 
 #### 🔹 Home Page
 
-![Home](./screenshots/home.png)
+![Home](./public/screenshots/home.png)
 
 #### 🔹 Upload Resume
 
-![Upload](./screenshots/upload.png)
+![Upload](./public/screenshots/upload.png)
 
 #### 🔹 Analysis Result
 
-![Result](./screenshots/result.png)
+![Result](./public/screenshots/result.png)
 
 ---
 
