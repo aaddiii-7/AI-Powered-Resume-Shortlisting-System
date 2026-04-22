@@ -83,7 +83,6 @@ The application allows users to upload resumes, analyze them using AI, and recei
 
 ### 📸 Screenshots
 
-> *(Add your screenshots here — highly recommended for GitHub visibility)*
 
 #### 🔹 Home Page
 
@@ -103,7 +102,7 @@ The application allows users to upload resumes, analyze them using AI, and recei
 
 This project is deployed using **Vercel**.
 
-Link :
+Link : https://resumind-one-eta.vercel.app
 
 ---
 
